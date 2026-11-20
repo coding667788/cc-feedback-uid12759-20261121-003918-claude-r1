@@ -1,0 +1,121 @@
+{
+  "format": "rotation-audit-v1",
+  "drill": {
+    "start": 0,
+    "dual_start": 4,
+    "switch": 5,
+    "dual_end": 6,
+    "end": 10
+  },
+  "generations": {
+    "old": {
+      "label": "old",
+      "threshold": 2,
+      "shares": [
+        "o1",
+        "o2"
+      ]
+    },
+    "new": {
+      "label": "new",
+      "threshold": 2,
+      "shares": [
+        "n1",
+        "n2"
+      ]
+    }
+  },
+  "domains": [],
+  "budget": 0,
+  "max_actions": 1,
+  "copies": [
+    {
+      "id": "old-a",
+      "generation": "old",
+      "share": "o1",
+      "custodian": "A",
+      "domains": [],
+      "intervals": [
+        [
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "id": "old-b",
+      "generation": "old",
+      "share": "o2",
+      "custodian": "B",
+      "domains": [],
+      "intervals": [
+        [
+          0,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "new-a",
+      "generation": "new",
+      "share": "n1",
+      "custodian": "N1",
+      "domains": [],
+      "intervals": [
+        [
+          0,
+          10
+        ]
+      ]
+    },
+    {
+      "id": "new-b",
+      "generation": "new",
+      "share": "n2",
+      "custodian": "C",
+      "domains": [],
+      "intervals": [
+        [
+          0,
+          4
+        ]
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "fix-old",
+      "cost": 3,
+      "copy": {
+        "id": "fix-old-copy",
+        "generation": "old",
+        "share": "o2",
+        "custodian": "B2",
+        "domains": [],
+        "intervals": [
+          [
+            4,
+            10
+          ]
+        ]
+      }
+    },
+    {
+      "id": "fix-new",
+      "cost": 4,
+      "copy": {
+        "id": "fix-new-copy",
+        "generation": "new",
+        "share": "n2",
+        "custodian": "C2",
+        "domains": [],
+        "intervals": [
+          [
+            4,
+            10
+          ]
+        ]
+      }
+    }
+  ]
+}

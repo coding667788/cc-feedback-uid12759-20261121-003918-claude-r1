@@ -1,0 +1,97 @@
+{
+  "format": "rotation-audit-v1",
+  "drill": {
+    "start": 0,
+    "dual_start": 4,
+    "switch": 5,
+    "dual_end": 6,
+    "end": 10
+  },
+  "generations": {
+    "old": {
+      "label": "old generation",
+      "threshold": 2,
+      "shares": ["OLD-S1", "OLD-S2"]
+    },
+    "new": {
+      "label": "new generation",
+      "threshold": 2,
+      "shares": ["NEW-S1", "NEW-S2"]
+    }
+  },
+  "domains": [],
+  "budget": 0,
+  "max_actions": 4,
+  "copies": [
+    {
+      "id": "old-a",
+      "generation": "old",
+      "share": "OLD-S1",
+      "custodian": "A",
+      "domains": [],
+      "intervals": [[0, 10]]
+    },
+    {
+      "id": "old-b",
+      "generation": "old",
+      "share": "OLD-S2",
+      "custodian": "B",
+      "domains": [],
+      "intervals": [[0, 10]]
+    },
+    {
+      "id": "new-a",
+      "generation": "new",
+      "share": "NEW-S1",
+      "custodian": "A",
+      "domains": [],
+      "intervals": [[0, 10]]
+    },
+    {
+      "id": "new-c",
+      "generation": "new",
+      "share": "NEW-S2",
+      "custodian": "C",
+      "domains": [],
+      "intervals": [[0, 10]]
+    }
+  ],
+  "actions": [
+    {
+      "id": "action-1",
+      "cost": 10,
+      "copy": {
+        "id": "new-d-1",
+        "generation": "new",
+        "share": "NEW-S1",
+        "custodian": "D",
+        "domains": [],
+        "intervals": [[4, 6]]
+      }
+    },
+    {
+      "id": "action-2",
+      "cost": 10,
+      "copy": {
+        "id": "new-d-2",
+        "generation": "new",
+        "share": "NEW-S1",
+        "custodian": "D",
+        "domains": [],
+        "intervals": [[4, 6]]
+      }
+    },
+    {
+      "id": "action-3",
+      "cost": 3,
+      "copy": {
+        "id": "new-d-3",
+        "generation": "new",
+        "share": "NEW-S1",
+        "custodian": "D",
+        "domains": [],
+        "intervals": [[5, 6]]
+      }
+    }
+  ]
+}
